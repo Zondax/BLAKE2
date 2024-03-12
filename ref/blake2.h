@@ -151,11 +151,13 @@ extern "C" {
   int blake2b_init( blake2b_state *S, size_t outlen );
   int blake2b_init_key( blake2b_state *S, size_t outlen, const void *key, size_t keylen );
   int blake2b_init_param( blake2b_state *S, const blake2b_param *P );
+  int blake2b_init_with_personalization( blake2b_state *S, size_t outlen, uint8_t *personalization, uint8_t personalizationlen );
   int blake2b_update( blake2b_state *S, const void *in, size_t inlen );
   int blake2b_final( blake2b_state *S, void *out, size_t outlen );
 
   int blake2sp_init( blake2sp_state *S, size_t outlen );
   int blake2sp_init_key( blake2sp_state *S, size_t outlen, const void *key, size_t keylen );
+  int blake2s_init_with_personalization( blake2s_state *S, size_t outlen, uint8_t* personalization, uint8_t personalizationlen );
   int blake2sp_update( blake2sp_state *S, const void *in, size_t inlen );
   int blake2sp_final( blake2sp_state *S, void *out, size_t outlen );
 
